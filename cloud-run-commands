@@ -42,3 +42,17 @@ docker push gcr.io/ecstatic-fiber-408106/my-flask-app:v1
 # Step 4: Deploy the App to Google Cloud Run
 # Deploy the app to Cloud Run with the specified settings
 gcloud run deploy my-flask-service --image gcr.io/ecstatic-fiber-408106/my-flask-app:v1 --platform managed --region us-central1 --allow-unauthenticated
+
+
+----------------------
+#Deploying to cloud Run 
+
+# Deploying a new Cloud Run service with a specific name
+gcloud run deploy calmmykids \
+  --image gcr.io/your-project-id/my-flask-app:v1 \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --update-env-vars GOOGLE_API_KEY="your-api-key",FLASK_HOST="0.0.0.0",FLASK_PORT="5000",FLASK_DEBUG="True"
+
+
